@@ -1,0 +1,15 @@
+package pyxis.store;
+
+
+message Session {
+  message WatchEvent {
+    required string path = 1;
+    optional uint32 type = 2;
+    optional bool recursive = 3;
+  }
+
+  required uint64 sid = 1;
+  repeated WatchEvent watch = 2;
+  repeated string node = 3;
+  required uint32 timeout = 4;
+}
